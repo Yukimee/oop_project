@@ -1,0 +1,19 @@
+Index: user.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>class User:\r\n    def __init__(self, user_id, name, email, role):\r\n        self.__user_id = user_id  # Encapsulation\r\n        self.__name = name\r\n        self.__email = email\r\n        self.__role = role  # 'customer' or 'admin'\r\n\r\n    # Getters and setters\r\n    def get_user_id(self):\r\n        return self.__user_id\r\n\r\n    def get_name(self):\r\n        return self.__name\r\n\r\n    def get_email(self):\r\n        return self.__email\r\n\r\n    def get_role(self):\r\n        return self.__role\r\n\r\n    def set_name(self, name):\r\n        self.__name = name\r\n\r\n    def set_email(self, email):\r\n        self.__email = email\r\n\r\n    def display_info(self):\r\n        print(f\"User: {self.__name}, Email: {self.__email}, Role: {self.__role}\")\r\n\r\n\r\nusers_db = {}\r\n\r\n\r\ndef register_user(user_id, name, email, role, password):\r\n    if email in users_db:\r\n        return \"User already exists!\"\r\n    users_db[email] = {\"user_id\": user_id, \"name\": name, \"role\": role, \"password\": password}\r\n    return \"User registered successfully!\"\r\n\r\n\r\ndef login_user(email, password):\r\n    if email in users_db and users_db[email][\"password\"] == password:\r\n        return f\"Welcome, {users_db[email]['name']}!\"\r\n    return \"Invalid login credentials.\"\r\n\r\n\r\n# Example usage\r\nprint(register_user(1, \"Alice\", \"alice@example.com\", \"customer\", \"pass123\"))\r\nprint(login_user(\"alice@example.com\", \"pass123\"))\r\n\r\n# Example usage\r\nuser1 = User(1, \"Tommy\", \"tom@gmail.com\", \"customer\")\r\nuser1.display_info()\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/user.py b/user.py
+--- a/user.py	(revision d4f8e56383dc4ee209aaf57d593fa9695b630b64)
++++ b/user.py	(date 1738021157045)
+@@ -52,6 +52,8 @@
+ user1 = User(1, "Tommy", "tom@gmail.com", "customer")
+ user1.display_info()
+ 
++# test
++
+ 
+ 
+ 
