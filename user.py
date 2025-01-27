@@ -51,7 +51,3 @@ print(login_user("alice@example.com", "pass123"))
 # Example usage
 user1 = User(1, "Tommy", "tom@gmail.com", "customer")
 user1.display_info()
-
-# testing
-
-
